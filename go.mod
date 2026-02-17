@@ -3,12 +3,12 @@ module github.com/devhat/ipfailover
 go 1.26
 
 require (
-	github.com/aws/aws-sdk-go-v2 v1.40.1
-	github.com/aws/aws-sdk-go-v2/config v1.31.15
-	github.com/aws/aws-sdk-go-v2/credentials v1.18.19
-	github.com/aws/aws-sdk-go-v2/service/route53 v1.61.1
+	github.com/aws/aws-sdk-go-v2 v1.41.1
+	github.com/aws/aws-sdk-go-v2/config v1.32.7
+	github.com/aws/aws-sdk-go-v2/credentials v1.19.7
+	github.com/aws/aws-sdk-go-v2/service/route53 v1.62.1
 	github.com/cloudflare/cloudflare-go/v2 v2.4.0
-	github.com/hetznercloud/hcloud-go/v2 v2.28.0
+	github.com/hetznercloud/hcloud-go/v2 v2.36.0
 	github.com/prometheus/client_golang v1.23.2
 	github.com/spf13/viper v1.21.0
 	github.com/stretchr/testify v1.11.1

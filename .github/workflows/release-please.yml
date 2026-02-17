@@ -20,10 +20,8 @@ jobs:
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
-        with:
-          release-type: go
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: ${{ steps.release.outputs.release_created }}
         with:
           fetch-depth: 0
@@ -49,7 +47,7 @@ jobs:
 
       - name: Upload build artifacts for Docker
         if: ${{ steps.release.outputs.release_created }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: build-artifacts
           path: bin/
@@ -63,7 +61,7 @@ jobs:
       matrix:
         platform: [amd64, arm64]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: ${{ needs.release-please.outputs.tag_name }}
 
@@ -71,7 +69,7 @@ jobs:
         run: echo "REPO_OWNER_LOWER=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: build-artifacts
           path: bin/
